@@ -35,9 +35,15 @@ Spec: `Components/prompt.nd` (contract) · `Components/plan.md` (phases)
 
 ## Phase 3 — Sections
 
-- [ ] About / Work grid / Services / Contact from config
-- [ ] Resend route handler (env-gated) + mailto/log fallback
-- [ ] Section reveal animations
+- [x] Section renderer in page.tsx — order/content fully from `sections[]`
+- [x] Nav from config (links = sections, logo = brand) + mobile overlay menu + dark/light toggle (localStorage, pre-paint restore script)
+- [x] About: paragraphs, skills, stats, portrait slot (abstract orbit panel until an image is configured)
+- [x] Work grid: hover/reveal cards, wide-card spans, generated palette covers when `image` is null (zero stock photos)
+- [x] Services: bundled icon set (10 ids), staggered reveals
+- [x] Contact: blurb + email + availability + form; API route env-gated Resend with mailto/console fallback — verified: ok+mailto without key, 400 on invalid payload
+- [x] Footer: brand, socials (10 platform icons), copyright
+- [x] Section reveal animations (framer-motion whileInView, respects prefers-reduced-motion; GSAP stays dedicated to hero scroll)
+- [x] Gates green; all sections screenshot-verified; 0 page errors
 
 ## Phase 4 — Theming & Responsive
 

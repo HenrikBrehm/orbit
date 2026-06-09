@@ -50,6 +50,14 @@ export default function RootLayout({
       <head>
         {/* Config-driven theme + font tokens, rendered server-side (no FOUC) */}
         <style dangerouslySetInnerHTML={{ __html: `${themeCss()}\n${fontCss}` }} />
+        {theme.allowModeToggle ? (
+          /* Restore the visitor's saved mode before first paint */
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `try{var t=localStorage.getItem("orbit-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}`,
+            }}
+          />
+        ) : null}
       </head>
       <body className="antialiased">{children}</body>
     </html>
