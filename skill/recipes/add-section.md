@@ -18,7 +18,7 @@ Example — a second about-style section used as a "Process" block:
   id: "process",                  // unique anchor + nav target
   label: "Process",
   eyebrow: "Process",
-  title: "From brief to orbit in four weeks.",
+  title: "From brief to orbit in three steps.",
   paragraphs: ["Discovery and moodboards…", "Lookdev, motion tests…"],
   portrait: null,
   stats: [

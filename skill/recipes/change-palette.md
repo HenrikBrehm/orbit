@@ -32,10 +32,16 @@ editing theme tokens. Touches only `config/site.config.ts`.
 - Keep `background` dark enough in dark mode for bloom to read
   (luminance clearly below the glow).
 
+## Scope note
+
+`projects[].palette` values are per-project artwork colors (generated
+cover gradients), **not** theme tokens — leave them unless the user
+asks for the covers to be recolored too.
+
 ## Validate
 
 ```bash
-npm run typecheck && npm run lint
+npm run typecheck && npm run lint && npm run build
 ```
 Dev check: page recolored in both modes; ring glow matches the accent
 family; CTA text readable.

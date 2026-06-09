@@ -18,7 +18,7 @@ scroll choreography. Touches only `config/site.config.ts` → `hero`.
 | Scroll zoom-in | `scroll.cameraDolly` | world units toward origin |
 | Copy fade on scroll | `scroll.fade` | boolean |
 | Particle density/size | `particles.count` / `.size` | count is halved on low-tier devices |
-| Reflection mood | `environment.preset` + `.intensity` | 10 procedural rigs |
+| Reflection mood | `environment.preset` + `.intensity` | one of: `studio` `city` `night` `sunset` `dawn` `warehouse` `forest` `apartment` `park` `lobby` |
 | Custom reflections | `environment.hdri` | e.g. `/hdri/studio.hdr` in public/ |
 | Light colors | `lights.key` / `lights.rim` / `lights.ambient` | rim = colored edge light |
 | Vignette | `postprocessing.vignette` | darkness 0.6–0.9 |
@@ -35,7 +35,7 @@ scroll choreography. Touches only `config/site.config.ts` → `hero`.
 ## Validate
 
 ```bash
-npm run typecheck && npm run lint
+npm run typecheck && npm run lint && npm run build
 ```
 Dev check: scroll through the hero twice — motion reads smooth, copy
 legible against the scene in both theme modes.

@@ -49,7 +49,7 @@ Visitors' explicit toggle choice persists in localStorage and wins over
 ## Validate
 
 ```bash
-npm run typecheck && npm run lint
+npm run typecheck && npm run lint && npm run build
 ```
 Dev check: headings and body show the new faces (hard-reload), correct
 mode on first paint, toggle still works.

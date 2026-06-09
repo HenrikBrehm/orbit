@@ -66,9 +66,11 @@ Spec: `Components/prompt.nd` (contract) · `Components/plan.md` (phases)
 
 ## Phase 6 — Claude Code Customization Skill
 
-- [ ] skill/SKILL.md + CLAUDE.md golden rules
-- [ ] 6–8 tested recipes
-- [ ] Model swap helper
+- [x] CLAUDE.md (golden rules: config is truth, never break the render loop, gates) + skill/SKILL.md with request→recipe routing; mirrored in .claude/skills/orbit-customize for auto-discovery
+- [x] 8 recipes: rebrand, change-palette, swap-hero-model, add-project, change-copy-tone, add-section, tune-hero-scene, switch-fonts-and-mode
+- [x] Model swap helper: `npm run swap:model` (copy + auto-Draco + config snippet), tested
+- [x] **All 8 recipes validated by fresh agents in isolated worktrees** (workflow, one agent per recipe, only CLAUDE.md+SKILL.md+recipe as instructions): 8/8 briefs applied, 24/24 gates green (typecheck/lint/build each), zero scene breakage, all changes confined to config/site.config.ts
+- [x] Agent findings folded back into the recipes (full gate in every Validate block, preset name list, proper-noun rule for copy rewrites, grid-balance guidance, unique example palette)
 
 ## Phase 7 — Content, Docs, License
 

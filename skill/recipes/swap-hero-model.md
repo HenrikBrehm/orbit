@@ -32,7 +32,7 @@ user-provided .glb. Touches `public/models/` + `config/site.config.ts`.
        color: "#16161f",
        metalness: 0.9,
        roughness: 0.2,
-       emissive: "#2BD9A7",
+       emissive: "#2BD9A7",       // ← use YOUR theme accent here (theme.colors.*.accent)
        emissiveIntensity: 0.3,    // ≤ 0.4 for full models! 2.4 is showpiece-only
      },
    },
@@ -51,7 +51,7 @@ user-provided .glb. Touches `public/models/` + `config/site.config.ts`.
 ## Validate
 
 ```bash
-npm run typecheck && npm run lint
+npm run typecheck && npm run lint && npm run build
 ```
 Dev check (critical): model visible and framed, idle spin + float
 working, scroll still rotates/dollies, **zero console errors** (a wrong

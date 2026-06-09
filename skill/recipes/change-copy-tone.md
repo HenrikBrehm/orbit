@@ -28,11 +28,14 @@ corporate, English → German) without touching structure. Touches only
 3. Keep `sections[].id` values unchanged (anchors), only change the
    human-readable strings.
 4. Don't invent factual claims (awards, client names) unless provided.
+5. Rewrite **prose**, keep **identity**: proper nouns (project names
+   like "LUMEN"), category/tag taxonomy, skill terms and single-word
+   nav labels stay unless the user explicitly asks to rename them.
 
 ## Validate
 
 ```bash
-npm run typecheck && npm run lint
+npm run typecheck && npm run lint && npm run build
 ```
 Dev check: no overflowing headline on mobile width (~390px), nav labels
 still fit one line.

@@ -1,0 +1,68 @@
+ORBIT — Commercial Template License
+Copyright (c) 2026 The ORBIT Authors. All rights reserved.
+
+This is a commercial product. It is licensed, not sold. Purchasing a
+license grants you the rights below; it does not transfer ownership of
+the template's source code or assets.
+
+────────────────────────────────────────────────────────────────────
+STANDARD LICENSE (included with a regular purchase)
+────────────────────────────────────────────────────────────────────
+You may:
+  1. Use the template to create ONE (1) end product (a website) for
+     yourself or for one client.
+  2. Modify the template freely (code, design, content, AI-assisted
+     customization) to build that end product.
+  3. Deploy the end product to any number of domains/environments that
+     serve that single end product (production, staging, previews).
+
+The end product must be a site whose primary value is NOT the template
+itself: your portfolio, a client's portfolio, a studio site, etc.
+
+You may not, under the Standard License:
+  - Use the template in an end product that is sold to multiple
+    customers (that requires the Extended License).
+  - Redistribute, resell, sublicense, lease or share the template or
+    substantial portions of its source code, whether modified or not,
+    including in template/theme marketplaces, boilerplate collections,
+    page builders, or public code repositories.
+  - Extract the bundled assets (3D scene system, recipes, skill) for
+    use outside an end product built with this template.
+
+────────────────────────────────────────────────────────────────────
+EXTENDED LICENSE (separate purchase)
+────────────────────────────────────────────────────────────────────
+Everything in the Standard License, plus:
+  1. Use in ONE (1) end product that is sold or monetized per end
+     user (e.g. a paid site builder offering, a SaaS where customers
+     receive sites derived from this template).
+  2. Unlimited end-user instances within that single commercial end
+     product.
+
+Redistribution of the template itself (as a template, theme, source
+package or substantially similar derivative) remains prohibited under
+both licenses.
+
+────────────────────────────────────────────────────────────────────
+GENERAL TERMS (both licenses)
+────────────────────────────────────────────────────────────────────
+- One license per end product. Additional end products require
+  additional licenses.
+- Demo content (the "Nova Marlowe" persona, project descriptions) is
+  fictional placeholder content; replace it in production. The demo 3D
+  model, icons and graphics are original works covered by this license.
+- Third-party dependencies (Next.js, three.js, React Three Fiber,
+  GSAP, framer-motion, Tailwind CSS, Zod, Resend SDK and others
+  installed via npm) are licensed under their own respective licenses;
+  nothing in this license overrides them. GSAP's standard license
+  permits the usage in this template; review https://gsap.com/licensing/
+  if you build a paid end product with restricted access.
+- THE TEMPLATE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY
+  CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM THE USE OF THE
+  TEMPLATE.
+- If you obtained this template via a marketplace (e.g. ThemeForest/
+  Envato), that marketplace's license terms apply to your purchase and
+  take precedence where they differ.

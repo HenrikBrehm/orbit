@@ -28,7 +28,7 @@ brand. Touches only `config/site.config.ts`.
 ## Validate
 
 ```bash
-npm run typecheck && npm run lint
+npm run typecheck && npm run lint && npm run build
 ```
 Dev check: nav logo, footer, browser tab title all show the new brand.
 
