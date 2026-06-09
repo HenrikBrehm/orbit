@@ -1,11 +1,35 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { siteConfig } from "@/config/site.config";
+import { FONTS } from "@/lib/fonts";
+import { themeCss } from "@/lib/theme";
 import "./globals.css";
 
+const { brand, theme, seo } = siteConfig;
+
 export const metadata: Metadata = {
-  title: siteConfig.seo.title,
-  description: siteConfig.seo.description,
-  keywords: siteConfig.seo.keywords,
+  title: {
+    default: seo.title,
+    template: `%s — ${brand.name}`,
+  },
+  description: seo.description,
+  keywords: seo.keywords,
+  metadataBase: seo.url ? new URL(seo.url) : undefined,
+  openGraph: {
+    title: seo.title,
+    description: seo.description,
+    type: "website",
+    siteName: brand.name,
+    ...(seo.ogImage ? { images: [seo.ogImage] } : {}),
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: seo.title,
+    description: seo.description,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: theme.colors[theme.defaultMode].background,
 };
 
 export default function RootLayout({
@@ -13,8 +37,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headingFont = FONTS[theme.fonts.heading];
+  const bodyFont = FONTS[theme.fonts.body];
+  const fontCss = `:root{--font-heading-family:${headingFont.style.fontFamily};--font-body-family:${bodyFont.style.fontFamily};}`;
+
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      data-theme={theme.defaultMode}
+      className={`${headingFont.variable} ${bodyFont.variable}`}
+    >
+      <head>
+        {/* Config-driven theme + font tokens, rendered server-side (no FOUC) */}
+        <style dangerouslySetInnerHTML={{ __html: `${themeCss()}\n${fontCss}` }} />
+      </head>
       <body className="antialiased">{children}</body>
     </html>
   );

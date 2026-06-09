@@ -64,4 +64,4 @@ const result = {
 console.log(JSON.stringify(result, null, 2));
 
 await browser.close();
-process.exit(pageErrors.length > 0 ? 1 : 0);
+process.exitCode = pageErrors.length > 0 ? 1 : 0;

@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 /*
- * Theme tokens are injected as CSS variables by ThemeProvider from
- * config/site.config.ts. These are the dark-mode defaults so the first
- * paint matches before hydration.
+ * Theme tokens are injected as CSS variables from config/site.config.ts
+ * by the root layout (see lib/theme.ts). The values below are inert
+ * fallbacks only — edit the config, not this file.
  */
 :root {
   --background: #07070b;
@@ -38,4 +38,18 @@ body {
   color: var(--text);
   font-family: var(--font-body-family, ui-sans-serif), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading-family, ui-sans-serif), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-contrast);
 }

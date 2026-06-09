@@ -28,9 +28,10 @@ Spec: `Components/prompt.nd` (contract) · `Components/plan.md` (phases)
 
 ## Phase 2 — Config System
 
-- [ ] Theme tokens → CSS variables → Tailwind
-- [ ] Hero reads everything from config; model swap via path
-- [ ] Fonts from config (next/font registry)
+- [x] Theme tokens → CSS variables → Tailwind: both modes generated server-side from config (`lib/theme.ts`), injected as `<style>` with `data-theme` on `<html>` — no FOUC, no theme provider re-renders
+- [x] Font registry (`lib/fonts.ts`): 5 bundled next/font families, picked by config id; heading/body wired via CSS variables
+- [x] Full SEO metadata from config (OG, Twitter, themeColor, title template)
+- [x] Acceptance proven: light mode + lime accent + new headline + GLB model (`/models/demo-orb.glb`) swapped in via config only — screenshot-verified, then restored (`qa-output/variant`)
 
 ## Phase 3 — Sections
 
