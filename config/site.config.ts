@@ -75,7 +75,7 @@ const config: SiteConfig = {
         emissiveIntensity: 2.4,
       },
     },
-    environment: { preset: "city", intensity: 0.65 },
+    environment: { preset: "city", intensity: 0.65, hdri: null },
     lights: {
       ambient: 0.35,
       key: { color: "#ffffff", intensity: 2.2, position: [4, 6, 6] },

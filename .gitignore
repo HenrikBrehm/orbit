@@ -33,3 +33,6 @@ yarn-error.log*
 
 # claude local session settings
 .claude/settings.local.json
+
+# QA captures (transient)
+/qa-output

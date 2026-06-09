@@ -129,8 +129,11 @@ export const heroSchema = z.object({
     .max(2),
   model: heroModelSchema,
   environment: z.object({
+    /** Procedural light-rig look (no HDR downloads — works offline). */
     preset: environmentPresetSchema,
     intensity: z.number(),
+    /** Optional real HDRI under /public (e.g. "/hdri/studio.hdr") — overrides preset. */
+    hdri: z.string().nullable(),
   }),
   lights: z.object({
     ambient: z.number(),

@@ -16,11 +16,15 @@ Spec: `Components/prompt.nd` (contract) · `Components/plan.md` (phases)
 
 ## Phase 1 — 3D Hero Scene
 
-- [ ] Canvas + scene + environment/lights
-- [ ] Animated default model (procedural showpiece + GLB swap path)
-- [ ] Scroll-driven camera/model animation (GSAP ScrollTrigger)
-- [ ] Postprocessing (bloom, vignette)
-- [ ] 60 fps desktop, no console errors
+- [x] Canvas + scene + config-driven lights
+- [x] Procedural environment lighting (Lightformer rigs per preset — no HDR downloads, offline-safe; optional `hdri` file override)
+- [x] Animated default model: procedural ORBIT showpiece (chrome knot + glowing rings/satellites) + GLB path via useGLTF (auto-plays embedded animations, optional material override)
+- [x] Demo GLB generated license-free by `npm run generate:model` (hand-assembled GLB container)
+- [x] Scroll choreography: sticky 200vh hero, GSAP ScrollTrigger scrubs progress → camera dolly + model rotation; copy fade tween
+- [x] Postprocessing: Bloom (mipmap) + Vignette, MSAA 4
+- [x] Particle shell (deterministic, seeded)
+- [x] QA: 103 fps headless Chrome desktop, 0 console errors, 0 page errors (`scripts/qa-capture.mjs`)
+- [x] Fixes: spec folder `Components/` → root `PROMPT.md`/`PLAN.md` (Windows case-collision with `components/`); three pinned 0.182 (0.183+ deprecates THREE.Clock used by R3F internals); app/icon.svg favicon
 
 ## Phase 2 — Config System
 
