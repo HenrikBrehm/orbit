@@ -12,7 +12,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "generate:model": "node scripts/generate-demo-glb.mjs",
-    "optimize:model": "npx --yes @gltf-transform/cli draco"
+    "optimize:model": "npx --yes @gltf-transform/cli draco",
+    "swap:model": "node scripts/swap-model.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
