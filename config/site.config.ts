@@ -29,7 +29,7 @@ const config: SiteConfig = {
         surface: "#111118",
         text: "#F5F4F8",
         muted: "#9C9AAD",
-        accent: "#7B61FF",
+        accent: "#6C50F7", // WCAG AA (5.07:1) with white CTA text
         accentContrast: "#FFFFFF",
         border: "rgba(245, 244, 248, 0.09)",
       },

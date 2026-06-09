@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import type { Group } from "three";
 import { siteConfig } from "@/config/site.config";
+import type { SceneQuality } from "./types";
 
 /**
  * The built-in procedural hero centerpiece: a chrome torus knot wrapped
@@ -11,10 +12,13 @@ import { siteConfig } from "@/config/site.config";
  * and glow all come from `hero.model.material` in the config — the
  * emissive values drive the rings and satellites so they read as crisp
  * bloom accents instead of washing out the whole model.
+ *
+ * "low" quality halves geometry detail (a poor-man's LOD by device tier).
  */
-export function OrbitShowpiece() {
+export function OrbitShowpiece({ quality }: { quality: SceneQuality }) {
   const material = siteConfig.hero.model.material;
   const satellites = useRef<Group>(null);
+  const knotDetail: [number, number] = quality === "low" ? [128, 20] : [256, 32];
 
   useFrame((state) => {
     if (satellites.current) {
@@ -26,7 +30,7 @@ export function OrbitShowpiece() {
     <group>
       {/* Center knot — reflects the environment rig */}
       <mesh>
-        <torusKnotGeometry args={[1, 0.3, 256, 32]} />
+        <torusKnotGeometry args={[1, 0.3, knotDetail[0], knotDetail[1]]} />
         <meshStandardMaterial
           color={material.color}
           metalness={material.metalness}

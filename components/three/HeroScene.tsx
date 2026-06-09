@@ -45,7 +45,7 @@ export function HeroScene({
         position={lights.rim.position}
       />
       <EnvironmentRig />
-      <HeroModel progress={progress} />
+      <HeroModel progress={progress} quality={quality} />
       <Particles progress={progress} quality={quality} />
       <Effects quality={quality} />
     </>

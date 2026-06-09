@@ -6,14 +6,20 @@ import type { Group } from "three";
 import { siteConfig } from "@/config/site.config";
 import { GLBModel } from "./GLBModel";
 import { OrbitShowpiece } from "./OrbitShowpiece";
-import type { ScrollProgress } from "./types";
+import type { SceneQuality, ScrollProgress } from "./types";
 
 /**
  * Positions and animates the hero model. Renders the buyer's GLB when
  * `hero.model.path` is set, otherwise the built-in procedural showpiece.
  * Idle spin, float and the scroll-driven rotation all come from config.
  */
-export function HeroModel({ progress }: { progress: ScrollProgress }) {
+export function HeroModel({
+  progress,
+  quality,
+}: {
+  progress: ScrollProgress;
+  quality: SceneQuality;
+}) {
   const group = useRef<Group>(null);
   const model = siteConfig.hero.model;
   const scrollRotate = siteConfig.hero.scroll.rotate;
@@ -38,7 +44,7 @@ export function HeroModel({ progress }: { progress: ScrollProgress }) {
       rotation={model.rotation}
       scale={responsiveScale}
     >
-      {model.path ? <GLBModel path={model.path} /> : <OrbitShowpiece />}
+      {model.path ? <GLBModel path={model.path} /> : <OrbitShowpiece quality={quality} />}
     </group>
   );
 }

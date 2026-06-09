@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "generate:model": "node scripts/generate-demo-glb.mjs"
+    "generate:model": "node scripts/generate-demo-glb.mjs",
+    "optimize:model": "npx --yes @gltf-transform/cli draco"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

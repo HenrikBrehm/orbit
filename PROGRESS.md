@@ -56,9 +56,13 @@ Spec: `Components/prompt.nd` (contract) · `Components/plan.md` (phases)
 
 ## Phase 5 — Performance
 
-- [ ] Lazy/Suspense, code-splitting of three
-- [ ] Draco pipeline + docs
-- [ ] Lighthouse pass, stable 60 fps
+- [x] three fully code-split (dynamic ssr:false) — First Load JS 103 kB without WebGL
+- [x] WebGL boots after `load` + idle: copy paints instantly, scene fades in (TBT 3,800 → 2,830 ms mobile)
+- [x] Draco: local decoder in /public/draco (no CDN), `useGLTF(path, "/draco/")`; demo model compressed 223 → 32 KB and load-verified in browser; `npm run optimize:model` for buyers
+- [x] Geometry LOD by device tier (low → half knot segments) + Phase-4 DPR/particle/MSAA trims
+- [x] Lighthouse (desktop preset, prod build): Performance 77 / A11y 100 / Best Practices 100 / SEO 100, CLS 0 — mobile preset 66 (4× CPU throttle vs. WebGL shader compile; real low-end devices get the low tier/poster instead)
+- [x] CTA contrast fixed to WCAG AA via config accent (#6C50F7, 5.07:1)
+- [x] 103-108 fps measured headless desktop
 
 ## Phase 6 — Claude Code Customization Skill
 

@@ -10,9 +10,13 @@ import { siteConfig } from "@/config/site.config";
  * clip auto-plays. With `hero.model.material.override` enabled, every
  * mesh gets the config-defined PBR material — instant rebranding of any
  * model without touching a DCC tool.
+ *
+ * Draco-compressed GLBs decode via the local decoder in /public/draco
+ * (no CDN dependency). Compress yours with:
+ *   npx @gltf-transform/cli draco input.glb output.glb
  */
 export function GLBModel({ path }: { path: string }) {
-  const { scene, animations } = useGLTF(path);
+  const { scene, animations } = useGLTF(path, "/draco/");
   const { actions } = useAnimations(animations, scene);
   const materialConfig = siteConfig.hero.model.material;
 

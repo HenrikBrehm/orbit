@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { siteConfig } from "@/config/site.config";
@@ -26,6 +26,27 @@ export function Hero() {
   // null while detecting (first client frame) → renders neither canvas
   // nor poster, avoiding a flash of the wrong stage.
   const tier = usePerformanceTier();
+  // Boot WebGL only after the page has loaded and the main thread is
+  // idle: the copy paints instantly, the scene fades in right after.
+  const [stageReady, setStageReady] = useState(false);
+  useEffect(() => {
+    let cancelled = false;
+    const arm = () => {
+      const idle: (cb: () => void) => void =
+        "requestIdleCallback" in window
+          ? (cb) => window.requestIdleCallback(() => cb(), { timeout: 1500 })
+          : (cb) => window.setTimeout(cb, 200);
+      idle(() => {
+        if (!cancelled) setStageReady(true);
+      });
+    };
+    if (document.readyState === "complete") arm();
+    else window.addEventListener("load", arm, { once: true });
+    return () => {
+      cancelled = true;
+      window.removeEventListener("load", arm);
+    };
+  }, []);
 
   useGSAP(
     () => {
@@ -66,8 +87,10 @@ export function Hero() {
         <div className="pointer-events-none absolute inset-0">
           {tier === "fallback" ? (
             <HeroPoster />
-          ) : tier ? (
-            <HeroCanvas progress={progress.current} quality={tier} />
+          ) : tier && stageReady ? (
+            <div className="animate-stage-in h-full w-full">
+              <HeroCanvas progress={progress.current} quality={tier} />
+            </div>
           ) : null}
         </div>
 
