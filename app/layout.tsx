@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { siteConfig } from "@/config/site.config";
 import { FONTS } from "@/lib/fonts";
 import { themeCss } from "@/lib/theme";
+import { MotionProvider } from "@/components/ui/MotionProvider";
 import "./globals.css";
 
 const { brand, theme, seo } = siteConfig;
@@ -59,7 +60,9 @@ export default function RootLayout({
           />
         ) : null}
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <MotionProvider>{children}</MotionProvider>
+      </body>
     </html>
   );
 }

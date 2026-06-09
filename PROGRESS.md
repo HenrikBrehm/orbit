@@ -47,9 +47,12 @@ Spec: `Components/prompt.nd` (contract) · `Components/plan.md` (phases)
 
 ## Phase 4 — Theming & Responsive
 
-- [ ] Dark/light mode toggle
-- [ ] Full responsive pass
-- [ ] Mobile/low-power fallback (light scene / poster)
+- [x] Dark/light toggle verified end-to-end: data-theme flips, localStorage persists, survives reload (pre-paint restore script)
+- [x] 3D scene follows the live theme (particles read accent via MutationObserver hook)
+- [x] Device tiers (`lib/device.ts`): fallback = prefers-reduced-motion / no WebGL2 / ≤2GB → static poster (config image or CSS orbit motif); low = mobile/weak CPU → capped DPR, half particles, no MSAA; drei PerformanceMonitor lowers DPR on sustained drops
+- [x] Responsive: model auto-scales on narrow viewports; mobile nav overlay; verified at 390/768/1440
+- [x] Hydration mismatch fixed: MotionConfig reducedMotion="user" instead of SSR-divergent useReducedMotion branches
+- [x] QA matrix green (mobile/tablet/toggle/reduced-motion), 0 console errors, build green
 
 ## Phase 5 — Performance
 

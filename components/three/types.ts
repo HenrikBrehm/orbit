@@ -4,3 +4,6 @@
  * React re-renders at 60 fps.
  */
 export type ScrollProgress = { value: number };
+
+/** Scene quality tier — "low" trims DPR, particles and MSAA. */
+export type SceneQuality = "high" | "low";

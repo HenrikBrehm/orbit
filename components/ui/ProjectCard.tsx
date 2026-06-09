@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import type { Project } from "@/config/schema";
 
 /**
@@ -11,7 +11,6 @@ import type { Project } from "@/config/schema";
  * and setting the path.
  */
 export function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const reduceMotion = useReducedMotion();
   const [from, to] = project.palette;
 
   const card = (
@@ -90,8 +89,6 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
       ) : null}
     </article>
   );
-
-  if (reduceMotion) return <div className={project.wide ? "md:col-span-2" : ""}>{card}</div>;
 
   return (
     <motion.div

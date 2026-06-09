@@ -6,7 +6,7 @@ import { EnvironmentRig } from "./EnvironmentRig";
 import { HeroModel } from "./HeroModel";
 import { Particles } from "./Particles";
 import { Effects } from "./Effects";
-import type { ScrollProgress } from "./types";
+import type { SceneQuality, ScrollProgress } from "./types";
 
 /** Dollies the camera toward the model as the hero scroll progresses. */
 function CameraRig({ progress }: { progress: ScrollProgress }) {
@@ -22,7 +22,13 @@ function CameraRig({ progress }: { progress: ScrollProgress }) {
   return null;
 }
 
-export function HeroScene({ progress }: { progress: ScrollProgress }) {
+export function HeroScene({
+  progress,
+  quality,
+}: {
+  progress: ScrollProgress;
+  quality: SceneQuality;
+}) {
   const { lights } = siteConfig.hero;
   return (
     <>
@@ -40,8 +46,8 @@ export function HeroScene({ progress }: { progress: ScrollProgress }) {
       />
       <EnvironmentRig />
       <HeroModel progress={progress} />
-      <Particles progress={progress} />
-      <Effects />
+      <Particles progress={progress} quality={quality} />
+      <Effects quality={quality} />
     </>
   );
 }

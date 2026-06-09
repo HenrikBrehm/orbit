@@ -1,11 +1,13 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
 /**
  * Section reveal: fades + lifts content in the first time it scrolls
- * into view. Respects prefers-reduced-motion.
+ * into view. Reduced-motion users get a pure opacity fade via the
+ * global MotionConfig (see MotionProvider) — same DOM tree on server
+ * and client.
  */
 export function Reveal({
   children,
@@ -16,12 +18,6 @@ export function Reveal({
   delay?: number;
   className?: string;
 }) {
-  const reduceMotion = useReducedMotion();
-
-  if (reduceMotion) {
-    return <div className={className}>{children}</div>;
-  }
-
   return (
     <motion.div
       className={className}

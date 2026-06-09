@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import type { Group } from "three";
 import { siteConfig } from "@/config/site.config";
 import { GLBModel } from "./GLBModel";
@@ -17,6 +17,9 @@ export function HeroModel({ progress }: { progress: ScrollProgress }) {
   const group = useRef<Group>(null);
   const model = siteConfig.hero.model;
   const scrollRotate = siteConfig.hero.scroll.rotate;
+  const width = useThree((state) => state.size.width);
+  // Keep the model framed on narrow viewports
+  const responsiveScale = model.scale * (width < 640 ? 0.62 : width < 1024 ? 0.8 : 1);
 
   useFrame((state) => {
     const g = group.current;
@@ -33,7 +36,7 @@ export function HeroModel({ progress }: { progress: ScrollProgress }) {
       ref={group}
       position={model.position}
       rotation={model.rotation}
-      scale={model.scale}
+      scale={responsiveScale}
     >
       {model.path ? <GLBModel path={model.path} /> : <OrbitShowpiece />}
     </group>

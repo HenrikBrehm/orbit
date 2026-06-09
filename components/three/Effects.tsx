@@ -3,9 +3,10 @@
 import type { ReactElement } from "react";
 import { Bloom, EffectComposer, Vignette } from "@react-three/postprocessing";
 import { siteConfig } from "@/config/site.config";
+import type { SceneQuality } from "./types";
 
 /** Config-driven post pipeline: bloom for the emissive accents + vignette. */
-export function Effects() {
+export function Effects({ quality }: { quality: SceneQuality }) {
   const { bloom, vignette } = siteConfig.hero.postprocessing;
   if (!bloom.enabled && !vignette.enabled) return null;
 
@@ -24,5 +25,7 @@ export function Effects() {
     effects.push(<Vignette key="vignette" darkness={vignette.darkness} eskil={false} />);
   }
 
-  return <EffectComposer multisampling={4}>{effects}</EffectComposer>;
+  return (
+    <EffectComposer multisampling={quality === "low" ? 0 : 4}>{effects}</EffectComposer>
+  );
 }

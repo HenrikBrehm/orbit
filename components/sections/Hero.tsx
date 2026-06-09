@@ -4,6 +4,8 @@ import { useRef } from "react";
 import dynamic from "next/dynamic";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { siteConfig } from "@/config/site.config";
+import { usePerformanceTier } from "@/lib/device";
+import { HeroPoster } from "./HeroPoster";
 import type { ScrollProgress } from "@/components/three/types";
 
 const HeroCanvas = dynamic(
@@ -21,6 +23,9 @@ export function Hero() {
   const wrapper = useRef<HTMLElement>(null);
   const copy = useRef<HTMLDivElement>(null);
   const progress = useRef<ScrollProgress>({ value: 0 });
+  // null while detecting (first client frame) → renders neither canvas
+  // nor poster, avoiding a flash of the wrong stage.
+  const tier = usePerformanceTier();
 
   useGSAP(
     () => {
@@ -56,9 +61,14 @@ export function Hero() {
   return (
     <section ref={wrapper} id="hero" className="relative h-[200vh]">
       <div className="sticky top-0 h-screen overflow-hidden">
-        {/* 3D stage — pointer-events off so scrolling never gets trapped */}
+        {/* 3D stage — pointer-events off so scrolling never gets trapped.
+            Low-power / reduced-motion devices get a static poster. */}
         <div className="pointer-events-none absolute inset-0">
-          <HeroCanvas progress={progress.current} />
+          {tier === "fallback" ? (
+            <HeroPoster />
+          ) : tier ? (
+            <HeroCanvas progress={progress.current} quality={tier} />
+          ) : null}
         </div>
 
         {/* Copy overlay */}
