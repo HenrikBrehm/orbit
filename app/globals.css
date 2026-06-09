@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+/*
+ * Theme tokens are injected as CSS variables by ThemeProvider from
+ * config/site.config.ts. These are the dark-mode defaults so the first
+ * paint matches before hydration.
+ */
+:root {
+  --background: #07070b;
+  --surface: #111118;
+  --text: #f5f4f8;
+  --muted: #9c9aad;
+  --accent: #7b61ff;
+  --accent-contrast: #ffffff;
+  --border: rgba(245, 244, 248, 0.09);
+  --radius: 1.25rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-line: var(--border);
+  --radius-card: var(--radius);
+  --font-heading: var(--font-heading-family, ui-sans-serif);
+  --font-body: var(--font-body-family, ui-sans-serif);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--font-body-family, ui-sans-serif), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}

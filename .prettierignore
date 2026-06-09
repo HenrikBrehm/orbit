@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+build
+public/draco
+public/models
+*.glb
+package-lock.json
+sales-assets
