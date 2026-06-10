@@ -36,3 +36,6 @@ yarn-error.log*
 
 # QA captures (transient)
 /qa-output
+
+# internal sales material (kept local only)
+sales-assets/themeforest.md
