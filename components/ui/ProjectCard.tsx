@@ -24,7 +24,9 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
             src={project.image}
             alt={project.title}
             fill
-            sizes={project.wide ? "(min-width: 768px) 66vw, 100vw" : "(min-width: 768px) 33vw, 100vw"}
+            sizes={
+              project.wide ? "(min-width: 768px) 66vw, 100vw" : "(min-width: 768px) 33vw, 100vw"
+            }
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
         ) : (
@@ -69,7 +71,10 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
         <p className="text-muted text-sm leading-relaxed">{project.description}</p>
         <div className="mt-1 flex flex-wrap gap-2">
           {project.tags.map((tag) => (
-            <span key={tag} className="border-line text-muted rounded-full border px-3 py-1 text-xs">
+            <span
+              key={tag}
+              className="border-line text-muted rounded-full border px-3 py-1 text-xs"
+            >
               {tag}
             </span>
           ))}

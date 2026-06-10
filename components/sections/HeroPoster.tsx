@@ -26,7 +26,11 @@ export function HeroPoster() {
           "radial-gradient(90% 70% at 70% 30%, color-mix(in srgb, var(--accent) 22%, transparent) 0%, transparent 60%)",
       }}
     >
-      <svg viewBox="0 0 1440 900" className="h-full w-full opacity-60" preserveAspectRatio="xMidYMid slice">
+      <svg
+        viewBox="0 0 1440 900"
+        className="h-full w-full opacity-60"
+        preserveAspectRatio="xMidYMid slice"
+      >
         <ellipse
           cx="900"
           cy="380"

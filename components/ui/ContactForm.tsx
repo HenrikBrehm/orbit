@@ -57,7 +57,13 @@ export function ContactForm() {
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="flex flex-col gap-2">
           <span className="text-muted text-xs tracking-wide uppercase">Name</span>
-          <input name="name" required maxLength={120} placeholder="Jane Doe" className={inputClasses} />
+          <input
+            name="name"
+            required
+            maxLength={120}
+            placeholder="Jane Doe"
+            className={inputClasses}
+          />
         </label>
         <label className="flex flex-col gap-2">
           <span className="text-muted text-xs tracking-wide uppercase">Email</span>

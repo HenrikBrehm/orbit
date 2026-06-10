@@ -7,7 +7,12 @@ import type { FontId } from "@/config/schema";
  * template bundles these five self-hosted families and the config picks
  * by id (`theme.fonts.heading` / `theme.fonts.body`).
  */
-const inter = Inter({ subsets: ["latin"], display: "swap", preload: false, variable: "--font-inter" });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  preload: false,
+  variable: "--font-inter",
+});
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   display: "swap",
@@ -15,7 +20,12 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
 });
 const sora = Sora({ subsets: ["latin"], display: "swap", preload: false, variable: "--font-sora" });
-const manrope = Manrope({ subsets: ["latin"], display: "swap", preload: false, variable: "--font-manrope" });
+const manrope = Manrope({
+  subsets: ["latin"],
+  display: "swap",
+  preload: false,
+  variable: "--font-manrope",
+});
 const syne = Syne({ subsets: ["latin"], display: "swap", preload: false, variable: "--font-syne" });
 
 export const FONTS: Record<FontId, NextFontWithVariable> = {

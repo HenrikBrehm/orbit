@@ -38,12 +38,7 @@ export function HeroModel({
   });
 
   return (
-    <group
-      ref={group}
-      position={model.position}
-      rotation={model.rotation}
-      scale={responsiveScale}
-    >
+    <group ref={group} position={model.position} rotation={model.rotation} scale={responsiveScale}>
       {model.path ? <GLBModel path={model.path} /> : <OrbitShowpiece quality={quality} />}
     </group>
   );

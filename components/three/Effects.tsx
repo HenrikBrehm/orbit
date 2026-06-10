@@ -25,7 +25,5 @@ export function Effects({ quality }: { quality: SceneQuality }) {
     effects.push(<Vignette key="vignette" darkness={vignette.darkness} eskil={false} />);
   }
 
-  return (
-    <EffectComposer multisampling={quality === "low" ? 0 : 4}>{effects}</EffectComposer>
-  );
+  return <EffectComposer multisampling={quality === "low" ? 0 : 4}>{effects}</EffectComposer>;
 }

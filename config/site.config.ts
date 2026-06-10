@@ -131,7 +131,8 @@ const config: SiteConfig = {
       label: "Services",
       eyebrow: "Services",
       title: "What I can do for you.",
-      intro: "From a single hero visual to a full interactive launch — engagements that fit the mission.",
+      intro:
+        "From a single hero visual to a full interactive launch — engagements that fit the mission.",
     },
     {
       type: "contact",
