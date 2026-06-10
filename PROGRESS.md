@@ -74,9 +74,11 @@ Spec: `Components/prompt.nd` (contract) · `Components/plan.md` (phases)
 
 ## Phase 7 — Content, Docs, License
 
-- [ ] README + Quickstart + screenshots
-- [ ] SETUP.md (env/keys)
-- [ ] LICENSE (standard + extended note)
+- [x] Demo content: fictional 3D/motion designer persona (Nova Marlowe), 6 projects with generated covers, 4 services, stats/skills — zero stock assets, zero licensing risk
+- [x] README: pitch, features, quickstart (<5 min), config overview, AI-skill section, scripts table, deploy, screenshots (docs/screenshots)
+- [x] SETUP.md: Resend key setup + fallback behavior, custom HDRI, Vercel deploy steps, troubleshooting table
+- [x] LICENSE: commercial standard/extended terms + third-party note
+- [x] Buyer-flow verified end-to-end: fresh `git clone` → `npm ci` → typecheck → build, all green (one transient Windows build-worker abort on first try, clean on rerun)
 
 ## Phase 8 — Deploy & Sales Assets
 
