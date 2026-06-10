@@ -2,6 +2,7 @@
   "name": "orbit",
   "version": "1.0.0",
   "private": true,
+  "license": "SEE LICENSE IN LICENSE",
   "description": "ORBIT — config-driven interactive 3D portfolio template (Next.js + React Three Fiber)",
   "scripts": {
     "dev": "next dev --turbopack",

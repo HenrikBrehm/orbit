@@ -1,5 +1,12 @@
 # ORBIT — Interactive 3D Portfolio Template
 
+> ⚠️ **Not open source.** This repository is published as a public
+> showcase. ORBIT is a **commercial template** — every use (personal,
+> client, or commercial) requires a purchased license, and copying,
+> reusing, redistributing or republishing the source is prohibited.
+> See [LICENSE](LICENSE). © 2026 The ORBIT Authors, all rights
+> reserved.
+
 **One typed config. One stunning WebGL hero. An AI customization skill
 included.** ORBIT is a premium portfolio template for designers,
 3D artists and creative developers — built with Next.js 15, React
