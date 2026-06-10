@@ -82,6 +82,18 @@ Spec: `Components/prompt.nd` (contract) · `Components/plan.md` (phases)
 
 ## Phase 8 — Deploy & Sales Assets
 
-- [ ] Vercel deploy (or documented steps if login required)
-- [ ] Screenshots / capture
-- [ ] ThemeForest submission assets
+- [x] Vercel deploy: requires human account login (CLI hangs on interactive auth) → fully documented in SETUP.md (`npx vercel login` once, then `npx vercel --prod`); production bundle built, served and QA'd locally as the live-demo stand-in
+- [x] Sales screenshots 1920×1080 (hero dark/scrolled/light, all sections, live-customization variant) in sales-assets/screenshots
+- [x] 30s scroll capture of the hero choreography (scroll-capture.webm; GIF/MP4 conversion needs full ffmpeg — noted in the kit)
+- [x] ThemeForest submission kit: item name, description copy, feature list, tags, category, pricing strategy (sales-assets/themeforest.md)
+
+---
+
+## Definition of Done — final check (2026-06-10)
+
+- ✅ `npm run dev` zeigt eine optisch erstklassige 3D-Portfolio-Seite (103+ fps desktop, 0 Konsolenfehler)
+- ✅ Branding/Farben/Texte/Projekte/Hero-Modell allein über `site.config.ts` änderbar (zweifach live bewiesen: acid-test Variante + Draco-GLB-Swap, Screenshots in docs/)
+- ✅ Claude-Code-Skill + 8 getestete Rezepte (8/8 Agent-Läufe, 24/24 Gates grün, Szene nie gebrochen)
+- ✅ 60 fps Desktop, sauberer Mobile-/Low-Power-Fallback (Tier-System + Poster, QA-Matrix grün)
+- ✅ typecheck/lint/build grün; frischer Clone → `npm ci` → build verifiziert
+- ✅ Vercel-deploybar (Konfiguration komplett; Login-Schritt dokumentiert — einziger menschlicher Rest-Schritt)

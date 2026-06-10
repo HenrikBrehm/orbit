@@ -42,6 +42,13 @@ downloads). If you want a real HDRI: put a `.hdr` file under
 
 ## 3. Deploy to Vercel
 
+> **Status note:** deployment requires a Vercel account login, which
+> only a human can complete. Run `npx vercel login` once (interactive),
+> then `npx vercel --prod` from the project root — everything else is
+> preconfigured and the production build is verified green. The full
+> production bundle has been served and QA'd locally via
+> `npm run build && npm run start`.
+
 1. Push the project to a Git repo (GitHub/GitLab/Bitbucket), or use
    the CLI: `npx vercel`.
 2. On [vercel.com](https://vercel.com): **Add New → Project → Import**

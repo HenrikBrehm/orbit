@@ -89,4 +89,5 @@ Site Templates → Creative → Portfolio
 - 02-hero-scrolled.png — scroll choreography mid-state
 - 03..06 — sections (about/work/services/contact)
 - 07-hero-light.png — light mode
-- video-raw/*.webm — scroll capture for the item video/GIF
+- 08-live-customization-variant.png — same template after a config-only edit (mode/accent/headline/model)
+- scroll-capture.webm — 30s scroll capture of the hero choreography (convert to GIF/MP4 with full ffmpeg for marketplace upload)
